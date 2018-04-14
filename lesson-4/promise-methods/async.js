@@ -15,8 +15,13 @@ f1();
 
 const getRainbow = () => new Promise(
   resolve => { setTimeout(() => { resolve('rainbow'); }, 3000);},
-  reject => { setTimeout((e) => { reject(e); }, 3000);}
 );
+
+const getRainbow2 = () => new Promise(
+  resolve => { setTimeout(() => { resolve('rainbow'); }, 3000);}
+);
+
+const getResult = async () => await Promise.all([getRainbow(), getRainbow2()]);
 
 
 async function unicorn() {
@@ -31,4 +36,3 @@ async function unicorn() {
   }
 }
 
-await unicorn();
