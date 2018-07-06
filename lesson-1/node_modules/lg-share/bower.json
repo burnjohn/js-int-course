@@ -1,0 +1,30 @@
+{
+  "name": "lg-share",
+  "version": "1.1.0",
+  "description": "Social media share module for lightgallery.",
+  "main": [
+    "dist/lg-share.min.js"
+  ],
+  "keywords": [
+    "gallery",
+    "lightbox",
+    "image",
+    "youtube",
+    "vimeo"
+  ],
+  "authors": [
+    "Sachin N <sachi77n@gmail.com>"
+  ],
+  "homepage": "http://sachinchoolur.github.io/lightGallery/",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/sachinchoolur/lg-share.git"
+  },
+  "dependencies": {
+    "jquery": ">=1.7.0"
+  },
+  "license": "GPLv3",
+  "ignore": [
+    "README.md"
+  ]
+}

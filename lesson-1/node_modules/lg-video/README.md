@@ -1,0 +1,86 @@
+![travis](https://travis-ci.org/sachinchoolur/lg-video.svg?branch=master)
+![bower](https://img.shields.io/bower/v/lg-video.svg)
+![npm](https://img.shields.io/npm/v/lg-video.svg)
+
+# Video module for [lightGallery](http://sachinchoolur.github.io/lightGallery/)
+A customizable, modular, responsive, lightbox gallery plugin for jQuery.
+![lightgallery](https://raw.githubusercontent.com/sachinchoolur/lightGallery/master/lib/lg.png)
+
+Main features
+---
+
+* Youtube Videos Vimeo Dailymotion VK and html5 videos Support.
+* Supports Videos posters.
+* Supports Videojs.
+* Automatically pause video when navigates to different slides.
+* Option to add Youtube, Yimeo parameters.
+* Automatically load youtube and vimeo thumbnails
+ 
+Browser support
+---
+lightgallery supports all major browsers including IE 9 and above..
+
+
+Installation
+---
+#### Install with Bower
+
+You can install lightgallery video plugin using the [Bower](http://bower.io) package manager.
+
+```sh
+$ bower install lg-video --save
+```
+
+#### npm
+
+You can also find lightgallery video plugin on [npm](http://npmjs.org).
+
+```sh
+$ npm install lg-video
+```
+#### Download from Github
+
+You can also directly download lg-video from github.
+
+#### CDN
+If you prefer to use a CDN you can load files via [jsdelivr](https://www.jsdelivr.com/projects/lg-video)
+
+####  Include Javascript files
+Include lg-video plugin after lightgallery.min.js.
+``` html
+<body>
+   ---
+    <!-- Include lightGallery -->
+    <script src="js/lightgallery.min.js"></script>
+    
+    <!-- Include lg-video -->
+    <script src="js/lg-video.min.js"></script>
+    
+    <!-- Include other lightgallery plugins (Optional) -->
+    <script src="js/lg-thumbnail.min.js"></script>
+</body>  
+```
+
+Demos 
+----
+  * [Youtube, Vimeo Video Gallery](http://sachinchoolur.github.io/lightGallery/demos/videos.html)
+  * [Video Gallery Without Poster](http://sachinchoolur.github.io/lightGallery/demos/videos.html#video-without-poster)
+  * [Video Player Parameters](http://sachinchoolur.github.io/lightGallery/demos/videos.html#video-player-param)
+  * [Automatically load thumbnails](http://sachinchoolur.github.io/lightGallery/demos/videos.html#auto-thumb)
+  * [Html5 Video Gallery](http://sachinchoolur.github.io/lightGallery/demos/html5-videos.html)
+  * [Html5 video gallery with videojs](http://sachinchoolur.github.io/lightGallery/demos/html5-videos.html#video-without-poster)
+  
+Docs
+-----
+[Options](http://sachinchoolur.github.io/lightGallery/docs/api.html#lg-video)
+
+License
+---
+
+#### Commercial license
+If you want to use lightGallery to develop commercial sites, themes, projects, and applications, the Commercial license is the appropriate license. With this option, your source code is kept proprietary. Purchase a lightGallery Commercial License at [uplabs.com/posts/lightgallery-plugin](https://www.uplabs.com/posts/lightgallery-plugin)
+
+#### Open source license
+
+If you are creating an open source application under a license compatible with the GNU GPL license v3, you may use this project under the terms of the GPLv3.
+

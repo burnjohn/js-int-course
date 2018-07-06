@@ -1,0 +1,23 @@
+{
+  "name": "ukrman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jquery": "2.2.4",
+    "lg-autoplay": "1.0.4",
+    "lg-fullscreen": "1.0.1",
+    "lg-hash": "1.0.4",
+    "lg-pager": "1.0.2",
+    "lg-share": "1.1.0",
+    "lg-thumbnail": "1.1.0",
+    "lg-video": "1.2.0",
+    "lg-zoom": "1.1.0",
+    "lightgallery": "1.6.6",
+    "owl.carousel": "2.1.1",
+    "owl.carousel2.thumbs": "0.1.8",
+    "vue": "2.5.13"
+  }
+}
