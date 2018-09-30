@@ -1,9 +1,21 @@
 var serverResponse = {
   title: 'Farm Animals',
-  pig: {icon: '/static/pig.221f.jpg', description: 'Goes \'oink!\''},
-  cow: {icon: '/static/cow.1dd9.jpg', description: 'Says \'moo\'.'},
-  dog: {icon: '/static/dog.9a82.jpg', description: 'Barks \'woof!\''},
-  cat: {icon: '/static/cat.c07e.jpg', description: 'Meow.'},
+  pig: {
+    icon: '/static/pig.221f.jpg',
+    description: 'Goes \'oink!\''
+  },
+  cow: {
+    icon: '/static/cow.1dd9.jpg',
+    description: 'Says \'moo\'.'
+  },
+  dog: {
+    icon: '/static/dog.9a82.jpg',
+    description: 'Barks \'woof!\''
+  },
+  cat: {
+    icon: '/static/cat.c07e.jpg',
+    description: 'Meow.'
+  },
 };
 
 const prototype = {
@@ -27,10 +39,7 @@ const obj = Object.create(prototype, {
  * Copy object
  */
 
-const animals = Object.assign({}, serverResponse);
-
-// Not in ecmascript standard
-//const animals = {...serverResponse};
+const animals = { ...serverResponse };
 
 /**
  * Create new object property with destructor
@@ -38,12 +47,28 @@ const animals = Object.assign({}, serverResponse);
  */
 
 
-// Object.defineProperties(animals, 'requestStatus', {
-//   enumerable: false,
-//   configurable: false,
-//   writable: false,
-//   value: 'All good',
-// });
+Object.defineProperty(animals, 'requestStatus', {
+  enumerable: false,
+  configurable: false,
+  writable: false,
+  value: 'All good',
+});
+
+Object.defineProperties(animals, {
+  requestStatus:{
+    enumerable: false,
+    configurable: false,
+    writable: false,
+    value: 'All good',
+  },
+  newProp: {
+    enumerable: true,
+    configurable: false,
+    writable: false,
+    value: 'All good',
+  },
+);
+
 //
 // console.log('Object with destructor: ', animals);
 

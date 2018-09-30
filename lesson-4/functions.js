@@ -79,15 +79,7 @@ gen.next();
  * Advanced generator function example
  */
 
-function* makeGenerator() {
-
-  const firstRes = yield null;
-
-  console.log('First res is: ', firstRes);
-
-  const secondRes = yield {};
-
-  console.log('Second res is: ', secondRes , firstRes);
+function makeGenerator() {
 
 }
 

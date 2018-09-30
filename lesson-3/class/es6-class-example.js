@@ -4,6 +4,9 @@
  */
 
 class SuperPerson {
+  constructor(name, gender) {
+
+  }
   eatFood() {
     console.log(this.name + ' is eating food');
   }
@@ -15,7 +18,7 @@ class SuperPerson {
 
 class Man extends SuperPerson {
   constructor(name, gender) {
-    super();
+    super(name, gender);
 
     this.name = name;
     this.gender = gender;

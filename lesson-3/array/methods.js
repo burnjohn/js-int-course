@@ -33,13 +33,17 @@ const animalsAdditionalList = [
 
 {
 
-  // const newList = animalsList.filter(animal => animal.power < 3);
+  const newList = animalsList.filter(animal => animal.power < 3);
 
 
   const newList = animalsList.filter(({ power }) => power < 3);
 
   // Or in es5
-  // var newList = animalsList.filter( function(item) { return item.power < 3 });
+  var newList = animalsList.filter(
+    function(item) {
+      return item.power < 3;
+    }
+  );
 
   console.log('Task 1 : ', newList);
 
@@ -52,9 +56,12 @@ const animalsAdditionalList = [
 
 {
 
-  const newList = animalsList.map((item) => {
+  const newList = animalsList.map(item => {
     return Object.assign({}, item, { name: 'dog' });
   });
+
+
+  // const newList = animalsList.map(item => ({...item, name: 'dog' }));
 
   console.log('Task 2 : ', newList);
 }
@@ -70,20 +77,37 @@ const animalsAdditionalList = [
 {
 
 const power = animalsList.reduce(
-  function(commonObj, item, index, arr) {
-    const key = item.name;
-    const value = item.power;
-
-    commonObj[key] = value;
-
-    return commonObj;
-
-    // return item.power > acc ? item.power : acc;
-  }, {}
+  (acc, item) =>
+    item.power > acc
+      ? item.power
+      : acc
+  ,0
 );
 
 console.log('Task 3 : ', power);
 
+}
+
+/**
+ *
+ * Task 3.5: Get the highest power animal power
+ * it should be number
+ *
+ */
+
+{
+
+  const power = animalsList.reduce(
+    (commonObj, { name: key, power: value }) => {
+      const key = item.name;
+      const value = item.power;
+
+      commonObj[key] = value;
+      return commonObj;
+    }, {}
+  );
+
+  console.log('Task 3 : ', power);
 }
 
 /**
@@ -93,9 +117,7 @@ console.log('Task 3 : ', power);
  */
 
 {
-  const isCowInTheList = animalsList.some(function(item) {
-    return item.name === 'cow';
-  });
+  const isCowInTheList = animalsList.some(item => item.name === 'cow');
 
   console.log('Task 4 : ', isCowInTheList);
 }
@@ -123,7 +145,7 @@ console.log('Task 3 : ', power);
 {
   const newList = animalsList.concat(animalsAdditionalList);
 
-  // const newList = [...animalsList, ...animalsAdditionalList]
+  // const newList = [...animalsList, ...animalsAdditionalList];
 
   console.log('Task 6 : ', newList);
 }
@@ -136,17 +158,19 @@ console.log('Task 3 : ', power);
 
 {
   const newList = animalsList.reduce(
-    (namesStr, {name}, index) => (
-      index === 1
-        ? name + namesStr
-        : namesStr + ', ' + name
+    (namesStr, { name }, index) => (
+      index === 0
+        ? namesStr + name
+        : `${namesStr}, ${name}`
     ), ''
   );
-  //
-  // const newList = animalsList
-  //   .map(({ name }) => name)
-  //   .reverse()
-  //   .join(' | ');
+
+
+
+  const newList = animalsList
+    .map(({ name }) => name)
+    .reverse()
+    .join(' | ');
 
 
   console.log('Task 7 : ', newList);

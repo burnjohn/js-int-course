@@ -1,10 +1,13 @@
 class SuperMenu {
+
   privateMethod (){} // works
 
   protectedMethod (){} // works
 
   publicMethod (){} // works
 }
+
+new SuperMenu('asdg');
 
 class PageMenu extends SuperMenu {
   publicMethod() {

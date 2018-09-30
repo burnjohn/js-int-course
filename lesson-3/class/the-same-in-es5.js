@@ -11,6 +11,7 @@ function Car(model) {
     driver: null
   };
 
+
   Car.count++;
 }
 

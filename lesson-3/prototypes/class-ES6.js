@@ -1,9 +1,4 @@
 class SuperPerson {
-  constructor(name, gender){
-
-
-  }
-
   getFamilyStatus2() {
     if (!this.family) {
       return 'Free';
@@ -29,15 +24,18 @@ class Person extends SuperPerson {
     this.name = name;
     this.gender = gender;
     this.family = true;
-    //
-    // this.getFamilyStatus = () => {
-    //   return 'My method!';
-    // }
+
     Person.count++
   }
 
-  static getStatus(){
-    console.log('static method')
+  getFirstName() {
+    return this.name;
+  }
+
+  showFullName() {
+    const firstName = this.getFirstName();
+
+    console.log(firstName);
   }
 }
 

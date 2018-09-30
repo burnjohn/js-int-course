@@ -3,6 +3,24 @@
  *
  */
 
+let a = true;
+
+(() => {
+// LexEnv = {top: true, func: func(){}, parentEnv: window}
+  let top = true;
+
+  const func = () => {
+    // LexEnv = {inner: true, parentEnv: LexEnv};
+    const inner = true;
+    top = false;
+    a = false;
+
+  };
+
+  func();
+
+})();
+
 
 /*
  * Lexical environment
@@ -13,7 +31,10 @@
 
   function sayHi(name) {
     const phrase = "Привет, " + name;
-    // LexicalEnvironment = { name: 'Вася', phrase: 'Привет Вася' };
+    // LexicalEnvironment = {
+      // name: 'Вася',
+      // phrase: 'Привет Вася'
+    // };
     alert(phrase);
   }
 
@@ -89,7 +110,7 @@ var counter = (function() {
     }
   };
 
-  counter.setParams()
+  counter.setParams();
 
   var counter = makeCounter();
 
