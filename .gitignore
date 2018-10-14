@@ -1,3 +1,4 @@
-.idea/
-lesson-1/node_modules/
-lesson-1/package-lock.json
+.idea
+node_modules
+package-lock.json
+.DS_Store

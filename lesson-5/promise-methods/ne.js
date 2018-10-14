@@ -1,3 +1,5 @@
+// Example of request in react
+
 class Component extends React.Component {
   constructor() {
     this.state ={

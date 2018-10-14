@@ -16,19 +16,12 @@ const insertToDom = text => {
 
 const number = 5;
 
+Promise.resolve(number)
+.then(addString)
+.then(saveInLocalStorage)
+.then(insertToDom)
+.catch(error => {
+  console.log(error)
+});
 
 Promise.reject(error);
-
-Promise.resolve(number)
-  .then(addString)
-  .then(saveInLocalStorage)
-  .then(insertToDom)
-  .catch(error => {
-      console.log(error)
-  });
-
-
-var a = null;
-getString.then(resp => {
-  a = resp;
-});
