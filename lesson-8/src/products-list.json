@@ -1,0 +1,44 @@
+[
+  {
+    "name": "Some product 1",
+    "imageSrc": "images/product-1.jpg",
+    "itemsCount": 1,
+    "id": 1
+  },
+  {
+    "name": "Some product 2",
+    "imageSrc": "images/product-2.jpg",
+    "itemsCount": 234,
+    "id": 2
+  },
+  {
+    "name": "Some product 3",
+    "imageSrc": "images/product-3.jpg",
+    "itemsCount": 31524,
+    "id": 3
+  },
+  {
+    "name": "Some product 4",
+    "imageSrc": "images/product-4.jpg",
+    "itemsCount": 41234,
+    "id": 4
+  },
+  {
+    "name": "Some product 5",
+    "imageSrc": "images/product-5.jpg",
+    "itemsCount": 52,
+    "id": 5
+  },
+  {
+    "name": "Some product 6",
+    "imageSrc": "images/product-6.jpg",
+    "itemsCount": 61234,
+    "id": 6
+  },
+  {
+    "name": "Some product 7",
+    "imageSrc": "images/product-7.jpg",
+    "itemsCount": 711,
+    "id": 7
+  }
+]

@@ -18,7 +18,7 @@ const getProductsReq = () => new Promise((res, rej) => {
     .then((usersFromServer) => {
       users = usersFromServer;
 
-      console.log('Resolved: ', usersFromServer);
+      return usersFromServer;
     });
 
   getProductsReq()
