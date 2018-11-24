@@ -1,7 +1,7 @@
 
 function showModal(text) {
-  var modal = $('.thanks-modal');
-  var modalTextCont = $('.thanks-modal__wrapper');
+  const modal = $('.thanks-modal');
+  const modalTextCont = $('.thanks-modal__wrapper');
 
   modalTextCont.html(text);
 

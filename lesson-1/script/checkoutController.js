@@ -1,7 +1,7 @@
-var checkoutNode = document.querySelector('.checkout__container');
+const checkoutNode = document.querySelector('.checkout__container');
 
 if (checkoutNode) {
-  var checkoutContainer = new Vue({
+  const checkoutContainer = new Vue({
     el: '.checkout__container',
     data: {
       fields: {
@@ -22,32 +22,32 @@ if (checkoutNode) {
     },
     methods: {
       onPhoneFormClick: function(event) {
-        var name = event.target.name;
-        var formValue = checkoutContainer.fields[name];
+        const name = event.target.name;
+        const formValue = checkoutContainer.fields[name];
 
         if(isPhoneInputEmpty(formValue)) {
           return checkoutContainer.fields[name] = checkoutTexts.phoneInitial;
         }
       },
       prepareForm: function(event) {
-        var name = event.target.name;
+        const name = event.target.name;
         if (name) {
-          var model = checkoutContainer.fields[name];
+          const model = checkoutContainer.fields[name];
           checkoutContainer.fields[name] = model.trim();
         }
       },
       prepareOptionalForm: function(event) {
-        var name = event.target.name;
+        const name = event.target.name;
         if (name) {
-          var model = checkoutContainer.optional.shipping[name];
+          const model = checkoutContainer.optional.shipping[name];
           checkoutContainer.optional.shipping[name] = model.trim();
         }
       },
       updateForm: function(event) {
-        var name = event.target.name;
+        const name = event.target.name;
 
         if(name === 'phone') {
-          var value = checkoutContainer.fields[name];
+          const value = checkoutContainer.fields[name];
 
           if(isPhoneInputEmpty(value)) {
             checkoutContainer.fields[name] = '';
@@ -55,8 +55,8 @@ if (checkoutNode) {
         }
 
         if(name === 'email') {
-          var value = checkoutContainer.fields[name];
-          var hasEmailSign = /@/.test(value);
+          const value = checkoutContainer.fields[name];
+          const hasEmailSign = /@/.test(value);
 
           if(!hasEmailSign) checkoutContainer.fields[name] = '';
         }
@@ -68,7 +68,7 @@ if (checkoutNode) {
       },
 
       confirmOrder: function() {
-        var basicParams = {
+        let basicParams = {
           firstname: checkoutContainer.fields.firstName,
           lastname: checkoutContainer.fields.lastName,
           email: checkoutContainer.fields.email,
@@ -76,16 +76,16 @@ if (checkoutNode) {
           shippingType: checkoutContainer.optional.shippingType
         };
 
-        var additionalParams = {
+        const additionalParams = {
           comment: checkoutContainer.optional.comment.trim()
         };
 
-        var shippingParams = {
+        const shippingParams = {
           address: checkoutContainer.optional.shipping.address,
           postOffice: checkoutContainer.optional.shipping.postOffice
         };
 
-        var emptyBasicFields = getEmptyKeys(basicParams);
+        const emptyBasicFields = getEmptyKeys(basicParams);
 
         if (emptyBasicFields.length) {
           showModal(modalTexts.wrongMainFields);
@@ -102,9 +102,9 @@ if (checkoutNode) {
           basicParams = Object.assign({}, basicParams, shippingParams);
         }
 
-        var params = Object.assign({}, basicParams, additionalParams);
+        const params = Object.assign({}, basicParams, additionalParams);
 
-        var dataToSend = getFormData(params);
+        const dataToSend = getFormData(params);
 
         sendMail(dataToSend);
 

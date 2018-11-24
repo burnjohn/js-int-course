@@ -2,14 +2,14 @@
  * This is the example of object mutation
  */
 
-var alex = {
+let alex = {
   gender: 'male',
   profession: 'engineer'
 };
 
 
-var oleg = alex;
-var alexandra = oleg;
+const oleg = alex;
+const alexandra = oleg;
 
 alexandra.gender = 'feemale';
 alexandra.profession = 'qa';

@@ -1,6 +1,6 @@
-var modalWindow = $('#modal');
-var body = $('body');
-var iosCloseContainer = $('.ios-close');
+const modalWindow = $('#modal');
+const body = $('body');
+const iosCloseContainer = $('.ios-close');
 
 function initCarousel() {
 
@@ -20,7 +20,7 @@ function initCarousel() {
 }
 
 function showPayModal() {
-  var payModal = $('.modal__payment');
+  const payModal = $('.modal__payment');
   if (isAppleIOS()) {
     iosCloseContainer.addClass('ios-close_hidden');
     modalWindow.addClass('modal__show_apple');
@@ -40,7 +40,7 @@ function hideCart() {
 }
 
 function showCart() {
-  var modalCloseBtn = $('#modal .modal__close');
+  const modalCloseBtn = $('#modal .modal__close');
 
   if (isAppleIOS()) {
     iosCloseContainer.addClass('ios-close_hidden');
@@ -55,10 +55,11 @@ function showCart() {
 }
 
 function initCart() {
-  var modalBtns = [
+  const modalBtns = [
     $('.buy-btn_main-page'),
     $('.buy-btn_buy-page'),
-    $('.buy-btn_menu')];
+    $('.buy-btn_menu')
+  ];
 
   modalBtns.forEach(function(item) {
     item.on('click', showCart)

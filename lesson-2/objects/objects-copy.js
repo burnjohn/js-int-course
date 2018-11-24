@@ -6,7 +6,7 @@
 var student1 = {
   name: 'Oleg',
   gender: 'male',
-  obj: {a:2}
+  obj: {a: 2},
 };
 
 var student2 = { ...student1 };
@@ -19,6 +19,7 @@ changeGender(student1);
 console.log('Case 2: cloning object with lodash', student1);
 
 function changeGender(student) {
+
   var newStudent = _.clone(student);
   newStudent.gender = 'female';
 

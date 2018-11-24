@@ -933,6 +933,10 @@ a:hover {
 .modal__show_apple {
   position: static;
 }
+.ios-close {
+  height: 100%;
+}
+
 .ios-close_hidden {
   display: none;
 }

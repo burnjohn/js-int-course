@@ -2,35 +2,29 @@
  * This is the example of arguments mutation by the function
  */
 
-
 // Module pattern for global scope protection
-(function(){
+(function() {
 
   function changeGender(person) {
     var newPerson = {};
 
     Object.keys(person).forEach(key => {
-      newPerson[key] = person[key]
+      newPerson[key] = person[key];
     });
-
-    debugger
 
     newPerson.gender = 'female';
   }
 
   var alex = {
     gender: 'male',
-    profession: 'engineer'
+    profession: 'engineer',
   };
 
   changeGender(alex);
 
   console.log('Mutating object: ', alex);
 
-
 })();
-
-
 
 /*
  * 2 ways of adding getters and setters for object properties
@@ -47,13 +41,13 @@ var user = {
 
   set name(value) {
     this.firstName = value.trim();
-  }
+  },
 };
 
-Object.defineProperty(user, "fullName", {
+Object.defineProperty(user, 'fullName', {
   get: function() {
     return this.firstName + ' ' + this.secondName;
-  }
+  },
 });
 
 user.name = ' Oleg ';
