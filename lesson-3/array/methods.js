@@ -35,17 +35,19 @@ const animalsAdditionalList = [
 
   const newList = animalsList.filter(animal => animal.power < 3);
 
-
-  const newList = animalsList.filter(({ power }) => power < 3);
+  // const newList = animalsList.filter(({ power }) => power < 3);
 
   // Or in es5
-  var newList = animalsList.filter(
-    function(item) {
-      return item.power < 3;
-    }
-  );
 
-  console.log('Task 1 : ', newList);
+  // var newList = animalsList.filter(
+  //   function(item) {
+  //     if (item.power < 3) {
+  //       return item.power;
+  //     }
+  //   }
+  // );
+
+  // console.log('Task 1 : ', newList);
 
 }
 
@@ -55,15 +57,14 @@ const animalsAdditionalList = [
  */
 
 {
+  const newList = animalsList.map(item => ({ ...item, name: 'dog' }));
 
-  const newList = animalsList.map(item => {
-    return Object.assign({}, item, { name: 'dog' });
-  });
+  // const newList = animalsList.map(item => {
+  //   return Object.assign({}, item, { name: 'dog' });
+  // });
 
 
-  // const newList = animalsList.map(item => ({...item, name: 'dog' }));
-
-  console.log('Task 2 : ', newList);
+  // console.log('Task 2 : ', newList);
 }
 
 
@@ -76,15 +77,28 @@ const animalsAdditionalList = [
 
 {
 
-const power = animalsList.reduce(
-  (acc, item) =>
-    item.power > acc
-      ? item.power
-      : acc
-  ,0
-);
+  const power = animalsList.reduce(
+    (prevResult, item, index, arr) => {
 
-console.log('Task 3 : ', power);
+      if (prevResult < item.power) {
+        return item.power;
+      }
+
+      return prevResult;
+    },
+    0
+  );
+
+
+  // const power = animalsList.reduce(
+  //   (acc, item) =>
+  //     item.power > acc
+  //       ? item.power
+  //       : acc
+  //   ,0
+  // );
+
+  // console.log('Task 3 : ', power);
 
 }
 
@@ -97,8 +111,13 @@ console.log('Task 3 : ', power);
 
 {
 
+  // const power = animalsList.reduce(
+  //   (commonObj, { name, power }) => ({...commonObj, ...{[name]: power}})
+  //   , {}
+  // );
+
   const power = animalsList.reduce(
-    (commonObj, { name: key, power: value }) => {
+    (commonObj, item) => {
       const key = item.name;
       const value = item.power;
 
@@ -107,7 +126,7 @@ console.log('Task 3 : ', power);
     }, {}
   );
 
-  console.log('Task 3 : ', power);
+  // console.log('Task 3.5 : ', power);
 }
 
 /**
@@ -157,13 +176,13 @@ console.log('Task 3 : ', power);
  */
 
 {
-  const newList = animalsList.reduce(
-    (namesStr, { name }, index) => (
-      index === 0
-        ? namesStr + name
-        : `${namesStr}, ${name}`
-    ), ''
-  );
+  // const newList = animalsList.reduce(
+  //   (namesStr, { name }, index) => (
+  //     index === 0
+  //       ? namesStr + name
+  //       : `${namesStr}, ${name}`
+  //   ), ''
+  // );
 
 
 
