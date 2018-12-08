@@ -2,7 +2,9 @@
 
 const obj = {
   data: 5,
+
   method() {
+
     const a = (function() {
       console.log(`this in simple func: `, this);
     }).bind(this);
@@ -12,7 +14,6 @@ const obj = {
     };
 
     a();
-    b();
   }
 };
 

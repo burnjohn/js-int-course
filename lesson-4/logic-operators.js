@@ -25,7 +25,7 @@ function getVariable(variable) {
 
 {
   const a = 0 || false || null; //null
-  const b = 0 || null || false; //false
+  const b = 0 || null || ''; //''
 
   const getVal = () => 'here';
 

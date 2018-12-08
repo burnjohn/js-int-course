@@ -19,7 +19,7 @@ f1(); //undefined
 
 const o = {
   prop: 37,
-  func: function() {
+  func() {
     return this;
   }
 };

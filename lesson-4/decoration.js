@@ -1,24 +1,27 @@
 
 /*
- * Decorators
+ * Decorator example
  */
 
+const sendToServer = (data) => {
+  console.log('Send data to server: ', data)
+};
 
-function checkPermissionDecorator(cb) {
-  return function(user) {
+const createCheckDataFunc = (onSuccess, onError) => {
+  return (data) => {
 
-    if (isAdmin(user)) {
-      return cb.apply(this, arguments);
+    if (data.user === 'Bob') {
+      return onSuccess(data);
     }
-    alert( 'Недостаточно прав' );
+
+    onError && onError();
   }
+};
 
-}
+const checkAndSave = createCheckDataFunc(
+  sendToServer,
+  () => console.log('Not permitted')
+);
 
-function save(user) {
-  localStorage.setItem('user', user);
-}
-
-const saveWithParams = checkPermissionDecorator(save);
-
-saveWithParams(user);
+checkAndSave({ user: 'Bob' });
+checkAndSave({ user: 'Bill' });

@@ -20,9 +20,9 @@ Person.prototype = new PersonSuperClass();
 
 // Object.setPrototypeOf(Person, new PersonSuperClass());
 
-var ivan = new Person('Ivan', 'male');
+var bob = new Person('Bob', 'male');
 
-console.log('New person: ', ivan);
+console.log('New person: ', bob);
 
-console.log('New person familyStatus: ', ivan.getFamilyStatus());
+// console.log('New person familyStatus: ', bob.getFamilyStatus());
 

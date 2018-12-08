@@ -1,4 +1,8 @@
 class SuperPerson {
+  constructor() {
+
+  }
+
   getFamilyStatus2() {
     if (!this.family) {
       return 'Free';
@@ -41,8 +45,8 @@ class Person extends SuperPerson {
 
 Person.count = 0;
 
-const ivan = new Person('Ivan', 'male');
+const bob = new Person('bob', 'male');
 
-console.log('New person: ', ivan);
+console.log('New person: ', bob);
 
-console.log('New person familyStatus: ', ivan.getFamilyStatus());
+// console.log('New person familyStatus: ', bob.getFamilyStatus());

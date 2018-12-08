@@ -1,11 +1,14 @@
+/*
+ * ES6 closure example
+ *
+ */
+
 const obj = (() => {
   let inreaseCount = null;
   let getCount = null;
 
-  // LexEnvPar = {inreaseCount, getCount, parentLexEnv: window}
-  {
-    // LexEnvPar = {counter, parentLexEnv: LexEnvPar}
 
+  {
     let counter = 0;
 
     inreaseCount = () => {

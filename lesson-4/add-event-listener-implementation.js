@@ -1,5 +1,6 @@
+const element = document.querySelector('div');
 
-$0.addEventListener1 = function(eventType, cb) {
+element.addEventListenerCustom = function(eventType, cb) {
   const domEl = this;
 
   if (!domEl.events) {
@@ -19,7 +20,7 @@ $0.addEventListener1 = function(eventType, cb) {
   }
 };
 
-$0.removeEventListener1 = function(eventType, cb) {
+element.removeEventListenerCustom = function(eventType, cb) {
   const domEl = this;
 
   let currentEventList  = domEl.events[eventType];
@@ -58,11 +59,11 @@ const showFocus2 = function() {
   console.log('focus 2222');
 };
 
-$0.addEventListener1('click', showClick);
-$0.addEventListener1('click', showClick1);
-$0.addEventListener1('click', showClick2);
+element.addEventListenerCustom('click', showClick);
+element.addEventListenerCustom('click', showClick1);
+element.addEventListenerCustom('click', showClick2);
 
 
-$0.addEventListener1('focus', showFocus);
-$0.addEventListener1('focus', showFocus1);
-$0.addEventListener1('focus', showFocus2);
+element.addEventListenerCustom('focus', showFocus);
+element.addEventListenerCustom('focus', showFocus1);
+element.addEventListenerCustom('focus', showFocus2);

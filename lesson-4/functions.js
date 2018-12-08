@@ -5,11 +5,13 @@
  */
 
 
-function getSum(numA, numB) {
+declaration();
+
+function declaration(numA, numB) {
   return numA + numB;
 }
 
-const getSquare = function(number) {
+var getSquare = function(number) {
   return number * number;
 };
 
@@ -18,8 +20,8 @@ const getMultipliedValue = (param1, param2) => param1 * param2;
 // IIFE example
 
 (function() {
-  let x = 9;
-  x++;
+  const x = 9;
+
   console.log(x);
 })();
 
@@ -36,18 +38,7 @@ function Person(){
   }, 1000);
 }
 
-let obj = new Person();
-
-
-function Person(){
-  this.age = 0;
-
-  setInterval(() => {
-    this.age++;
-  }, 1000);
-}
-
-let obj = new Person();
+const obj = new Person();
 
 
 /*
@@ -74,17 +65,21 @@ const gen = makeGenerator();
 gen.next();
 
 
-
 /*
- * Advanced generator function example
+ * Scopes example
+ *
  */
 
-function makeGenerator() {
 
+const b = 'Bob';
+
+function getB() {
+  console.log(b);
 }
 
-const gen = makeGenerator();
+function common() {
+  const b = 10;
+  getB();
+}
 
-gen.next('BOB');
-gen.next('ALEX');
-gen.next('BILL');
+common();
