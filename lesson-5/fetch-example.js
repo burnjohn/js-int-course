@@ -1,7 +1,7 @@
 
 fetch('https://pokeapi.co/api/v2/evolution-chain/?limit=1')
   .then(function(myBlob) {
-    return myBlob.text();
+    myBlob.text();
   })
   .then(function(response) {
     console.log('Resp', response);
@@ -12,4 +12,5 @@ fetch('https://pokeapi.co/api/v2/evolution-chain/?limit=1')
 
     textContainer.appendChild(text);
     body.appendChild(textContainer);
-  });
+  })
+  .catch()

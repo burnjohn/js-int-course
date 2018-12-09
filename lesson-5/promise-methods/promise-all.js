@@ -12,9 +12,10 @@ const req3 = fetch('https://pokeapi.co/api/v2/pokemon/12').then(resp => resp.jso
 
 
 Promise.all([req1, req2, req3])
-  .then(respList => Promise.all(respList.map(resp => resp.json())))
-  .then(pokemonList => {
+  .then((pokemonList) => {
+    // pokemonList === [resp1, resp2, resp3]
+
     console.log(pokemonList);
     pokemonList.forEach(insertToDom)
-  }, console.log)
+  })
   .catch(errorText => console.log());

@@ -8,21 +8,22 @@
 
 console.log(1,2,3,4);
 
+// Promise.resolve('Promise 2').then(console.log);
+
+setTimeout(function() {
+  console.log("TIMEOUT 2");
+}, 2000);
+
+// Promise.resolve('Promise 3').then(console.log);
+
+console.log(5);
+
+
 setTimeout(function() {
   console.log("TIMEOUT 1");
 }, 0);
 
-Promise.resolve('Promise 2').then(console.log);
-
-
-setTimeout(function() {
-  console.log("TIMEOUT 2");
-}, 0);
-
-Promise.resolve('Promise 3').then(console.log);
-
-console.log(5);
-
+console.log(10);
 
 
 // setImmediate(function() {

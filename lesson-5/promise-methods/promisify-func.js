@@ -1,4 +1,6 @@
 // Own promisify function
+const { uploadSync } = require('./modules');
+
 const utils = {};
 
 utils.promisify = (method) => new Promise((res, rej) => {
@@ -10,14 +12,19 @@ utils.promisify = (method) => new Promise((res, rej) => {
   }
 });
 
-const handleFileUpload = utils.promisify(upload);
+const handleFileUpload = utils.promisify(uploadSync);
 
 // Demo: how to work with Promise in node js
 handleFileUpload()
-  .then(toJson)
+  .then((dataToSave)  => {
+    toJson(dataToSave);
+  })
   .then(validateFile)
   .then(showLogs)
-  .then(saveToDB)
+  .then((data) => {
+    saveToDB(data);
+    return data;
+  })
   .then(saveToFS)
   .then(sendResponse)
   .catch(error => {

@@ -1,16 +1,17 @@
 const sendRequest = () => {
-  var request = new XMLHttpRequest();
+  const request = new XMLHttpRequest();
+  const isRequestAsync = true;
 
-  request.open('GET', 'https://pokeapi.co/api/v2/evolution-chain/?limit=10', true);
+  request.open('GET', 'https://pokeapi.co/api/v2/evolution-chain/?limit=10', isRequestAsync);
 
   request.onreadystatechange = function() {
 
     if (request.readyState === 4 && request.status === 200) {
       console.log('Payload got!!!');
 
-      var body = document.querySelector('body');
-      var textContainer = document.createElement('p');
-      var text = document.createTextNode(request.responseText);
+      const body = document.querySelector('body');
+      const textContainer = document.createElement('p');
+      const text = document.createTextNode(request.responseText);
 
       textContainer.appendChild(text);
       body.appendChild(textContainer);
@@ -25,6 +26,15 @@ const showbutton = document.querySelector('.show-log');
 const sendbutton = document.querySelector('.send-req');
 
 showbutton.addEventListener('click', () => console.log('WORKS!!!!'));
+
+sendbutton.addEventListener('click', () => sendRequest());
+sendbutton.addEventListener('click', () => sendRequest());
+sendbutton.addEventListener('click', () => sendRequest());
+sendbutton.addEventListener('click', () => sendRequest());
+sendbutton.addEventListener('click', () => sendRequest());
+sendbutton.addEventListener('click', () => sendRequest());
+sendbutton.addEventListener('click', () => sendRequest());
+sendbutton.addEventListener('click', () => sendRequest());
 sendbutton.addEventListener('click', () => sendRequest());
 sendbutton.addEventListener('click', () => sendRequest());
 sendbutton.addEventListener('click', () => sendRequest());
